@@ -2,6 +2,7 @@ import { Controller } from 'egg';
 
 export default class ScreenController extends Controller {
     async getareas() {
+        console.log('debug areas');
         const docs = await this.ctx.model.Area.find();
         this.ctx.success(docs.map(p => p.toJSON()));
     }
